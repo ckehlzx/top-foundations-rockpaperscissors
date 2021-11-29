@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+</head>
+<body>
+    <script>
+        // this is the outline for rock, paper scissors;
+        // this function will determine the computer's randomized selection.  0 is Rock, 1 is Paper, 2 is Scissors.
+
+        let choices = ["Rock", "Paper", "Scissors"];
+        
+        function computerPlay () {
+            return Math.floor(Math.random() * choices.length);
+        }
+
+        // first the computer will randomly select either rock, paper or scissors and store that in a variable computerSelection.
+
+        let computerSelection = computerPlay();
+
+        // second the player will be prompted to select either rock, paper or scissors and that value will be stored in a variable playerSelection.
+
+        function playerPrompt () {
+            playerChoice = prompt("Rock, Paper or Scissors?");
+            lower = playerChoice.toLowerCase();
+            if (lower === "rock") {
+                playerChoice = 0;
+            } else if (lower === "paper") {
+                playerChoice = 1;
+            } else playerChoice = 2;
+            return playerChoice;
+        }    
+        
+        let playerSelection = playerPrompt();
+
+         // this function will control the game and will require two variables.  the player's selection and the computer's selection.
+
+         function rps(playerSelection, computerSelection) {
+            if (playerSelection === 0 && computerSelection === 2) {
+                return "you win!";
+            } else if (playerSelection === 0 && computerSelection === 0) {
+                return "it's a tie!";
+            } else if (playerSelection === 0 && computerSelection === 1) {
+                return "sorry, you lose!";
+            } else if (playerSelection === 1 && computerSelection === 0) {
+                return "you win!";
+            } else if (playerSelection === 1 && computerSelection === 1) {
+                return "it's a tie!";
+            } else if (playerSelection === 1 && computerSelection === 2) {
+                return "sorry, you lose!";
+            } else if (playerSelection === 2 && computerSelection === 1) {
+                return "you win!";
+            } else if (playerSelection === 2 && computerSelection === 2) {
+                return "it's a tie!";
+            } else return "sorry, you lose!";
+             
+        }    
+
+        console.log(playerSelection);
+        console.log(computerSelection);
+        console.log(rps(playerSelection, computerSelection));        // if the player's selection is stronger than the computer's, declare "you win!"
+        // if the player's selection is the same as the computer's, declare "it's a tie!".
+        // if the player's selection is weaker than the computer's, declare "sorry, you lose!";
+    </script>
+</body>
+</html>
