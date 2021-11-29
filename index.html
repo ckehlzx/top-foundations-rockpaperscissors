@@ -38,30 +38,30 @@
 
          // this function will control the game and will require two variables.  the player's selection and the computer's selection.
 
-         function rps(playerSelection, computerSelection) {
+         function playRound(playerSelection, computerSelection) {
             if (playerSelection === 0 && computerSelection === 2) {
-                return "you win!";
+                return "you win! rock beats scissors";
             } else if (playerSelection === 0 && computerSelection === 0) {
                 return "it's a tie!";
             } else if (playerSelection === 0 && computerSelection === 1) {
-                return "sorry, you lose!";
+                return "sorry, you lose! paper beats rock";
             } else if (playerSelection === 1 && computerSelection === 0) {
-                return "you win!";
+                return "you win! paper beats rock";
             } else if (playerSelection === 1 && computerSelection === 1) {
                 return "it's a tie!";
             } else if (playerSelection === 1 && computerSelection === 2) {
-                return "sorry, you lose!";
+                return "sorry, you lose! scissors beats paper";
             } else if (playerSelection === 2 && computerSelection === 1) {
-                return "you win!";
+                return "you win! scissors beats paper";
             } else if (playerSelection === 2 && computerSelection === 2) {
                 return "it's a tie!";
-            } else return "sorry, you lose!";
+            } else return "sorry, you lose! rock beats scissors";
              
         }    
 
         console.log(playerSelection);
         console.log(computerSelection);
-        console.log(rps(playerSelection, computerSelection));        // if the player's selection is stronger than the computer's, declare "you win!"
+        console.log(playRound(playerSelection, computerSelection));        // if the player's selection is stronger than the computer's, declare "you win!"
         // if the player's selection is the same as the computer's, declare "it's a tie!".
         // if the player's selection is weaker than the computer's, declare "sorry, you lose!";
     </script>
