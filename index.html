@@ -15,7 +15,7 @@
         let choices = ["Rock", "Paper", "Scissors"];
         
         // this function will choose a random number between 0 and 1 and then multiply that by the total number of options in the above array. that number will then be rounded down.
-        function computerPlay () {
+        function computerPlay() {
             return Math.floor(Math.random() * choices.length);
         }
 
@@ -23,7 +23,7 @@
         let computerIntSelection = computerPlay();
         
         // this will convert the computer's integer choice into a string choice in order to make the output more easily readable
-        function computerChoice () {
+        function computerIntToString() {
             computerStringSelection = computerIntSelection;
             if (computerStringSelection === 0) {
                 computerStringSelection = 'rock';
@@ -35,7 +35,7 @@
         }
         
         // second the player will be prompted to select either rock, paper or scissors and that value will be stored in a variable playerSelection.  we convert the string to lowercase to allow for any case to be input and still function correctly.
-        function playerPrompt () {
+        function playerPrompt() {
             playerChoice = prompt("Rock, Paper or Scissors?");
             lower = playerChoice.toLowerCase();
             if (lower === "rock") {
@@ -46,51 +46,52 @@
             return playerChoice;
         }    
 
-         // this function will play one round of rock, paper, scissors. it calls upon the already created playerPrompt and computerPlay functions to create the round's selected choices.
+         // this function will play one round of rock, paper, scissors. it calls upon the already created playerPrompt and computerPlay functions to create the round's selected choices.  it also calls upon the computerStringSelection function to turn the computer's integer choice into a readable string choice for the console output.
          function playRound() {
             
             playerSelection = playerPrompt();
             computerIntSelection = computerPlay();
-            computerStringSelection = computerChoice();
-            console.log("You chose " + lower);
-            console.log("the computer chose " + computerStringSelection)
+            computerStringSelection = computerIntToString();
+            
+            console.log("You chose " + lower + ".");
+            console.log("The computer chose " + computerStringSelection + ".");
+            
             if (playerSelection === 0 && computerIntSelection === 2) {
-                console.log("you win! rock beats scissors");
+                console.log("You win! Rock smashes scissors into nothingness.");
                 let result = 1;
-                console.log(result);
+                return;
             } else if (playerSelection === 0 && computerIntSelection === 0) {
-                console.log("it's a tie!"); 
+                console.log("It's a tie!"); 
                 let result = 0;
-                console.log(result);
+                return;
             } else if (playerSelection === 0 && computerIntSelection === 1) {
-                console.log("sorry, you lose! paper beats rock");
+                console.log("Sorry, you lose! Paper engulfs rock until nothing reamins.");
                 let result = -1;
-                console.log(result);
+                return;
             } else if (playerSelection === 1 && computerIntSelection === 0) {
-                console.log("you win! paper beats rock");
+                console.log("You win! Paper engulfs rock until nothing reamins.");
                 let result = 1;
-                console.log(result);
+                return;
             } else if (playerSelection === 1 && computerIntSelection === 1) {
-                console.log("it's a tie!"); 
+                console.log("It's a tie!"); 
                 let result = 0;
-                console.log(result);
+                return;
             } else if (playerSelection === 1 && computerIntSelection === 2) {
-                console.log("sorry, you lose! scissors beats paper");
+                console.log("Sorry, you lose! Scissors deftly slices through paper until only ribbons remain.");
                 let result = -1;
-                console.log(result);
+                return;
             } else if (playerSelection === 2 && computerIntSelection === 1) {
-                console.log("you win! scissors beats paper");
+                console.log("You win! Scissors deftly slices through paper until only ribbons remain.");
                 let result = 1;
-                console.log(result);
+                return;
             } else if (playerSelection === 2 && computerIntSelection === 2) {
-                console.log("it's a tie!");
+                console.log("It's a tie!");
                 let result = 0;
-                console.log(result);
+                return;
             } else {let result = -1;
-                console.log("sorry, you lose! rock beats scissors");
-                console.log(result); 
-            }    
-             
+                console.log("Sorry, you lose! Rock smashes scissors into nothingness.");
+                return; 
+            }      
         }    
     </script>
 </body>
