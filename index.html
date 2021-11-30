@@ -35,75 +35,47 @@
             } else playerChoice = 2;
             return playerChoice;
         }    
-        
-        let playerSelection = playerPrompt();
 
          // this function will play one round of rock, paper, scissors. it requires two variables, the player's selection and the computer's selection.
 
          function playRound(playerSelection, computerSelection) {
+            
+            playerSelection = playerPrompt();
+            computerSelection = computerPlay();
             if (playerSelection === 0 && computerSelection === 2) {
                 console.log("you win! rock beats scissors");
                 let result = 1;
-                //return result;
-                
             } else if (playerSelection === 0 && computerSelection === 0) {
                 console.log("it's a tie!"); 
                 let result = 0;
-                //return result;
-                
             } else if (playerSelection === 0 && computerSelection === 1) {
                 console.log("sorry, you lose! paper beats rock");
                 let result = -1;
-                //return result;
-                
             } else if (playerSelection === 1 && computerSelection === 0) {
                 console.log("you win! paper beats rock");
                 let result = 1;
-                //return result;
-                
             } else if (playerSelection === 1 && computerSelection === 1) {
                 console.log("it's a tie!"); 
                 let result = 0;
-                //return result;
-                
             } else if (playerSelection === 1 && computerSelection === 2) {
                 console.log("sorry, you lose! scissors beats paper");
                 let result = -1;
-                //return result;
-                
             } else if (playerSelection === 2 && computerSelection === 1) {
                 console.log("you win! scissors beats paper");
                 let result = 1;
-                //return result;
-                
             } else if (playerSelection === 2 && computerSelection === 2) {
                 console.log("it's a tie!");
                 let result = 0;
-                //return result;
-                 
             } else {let result = -1;
-                console.log("sorry, you lose! rock beats scissors");
-                //return result;
-                
+                console.log("sorry, you lose! rock beats scissors"); 
             }    
              
         }    
-
        
-
-        function outcome() {
-        let result = playRound(playerSelection, computerSelection);    
-        if (result === 1) {
-            alert("you win!");
-        } else if (result === 0) {
-            alert("it's a tie!");
-        } else alert("sorry, you lose!");
-        }
-
-        console.log(playerSelection);
-        console.log(computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-        //console.log(outcome());
+        //console.log(playerSelection);
+        //console.log(computerSelection);
+        //console.log(playRound(playerSelection, computerSelection));
+        
     </script>
 </body>
 </html>
