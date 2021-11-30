@@ -9,20 +9,19 @@
 <body>
     <script>
         // this is the outline for rock, paper scissors;
-        // this function will determine the computer's randomized selection.  0 is Rock, 1 is Paper, 2 is Scissors.
-
+    
         // create array named choices that houses possible answers.
         let choices = ["Rock", "Paper", "Scissors"];
         
-        // this function will choose a random number between 0 and 1 and then multiply that by the total number of options in the above array. that number will then be rounded down.
+        // computerPlay will choose a random number between 0 and 1 and then multiply that by the total number of options in the above array. that number will then be rounded down. we will be left with either 0, 1 or 2.0 is Rock, 1 is Paper, 2 is Scissors. 
         function computerPlay() {
             return Math.floor(Math.random() * choices.length);
         }
 
-        // first the computer will randomly select either rock, paper or scissors using the computerPlay function and store that in a variable computerIntSelection.
+        // computerIntSelection holds the computer's choice in integer type.
         let computerIntSelection = computerPlay();
         
-        // this will convert the computer's integer choice into a string choice in order to make the output more easily readable
+        // computerIntToString will convert the integer type into a string so that we can output more readable code later.
         function computerIntToString() {
             computerStringSelection = computerIntSelection;
             if (computerStringSelection === 0) {
@@ -34,7 +33,7 @@
             } return computerStringSelection;
         }
         
-        // second the player will be prompted to select either rock, paper or scissors and that value will be stored in a variable playerSelection.  we convert the string to lowercase to allow for any case to be input and still function correctly.
+        // playerPrompt will prompt user to input either rock, paper or scissors and that value will be stored in variable playerChoice.  we convert the string to lowercase to allow for any case to be input and still function correctly.
         function playerPrompt() {
             playerChoice = prompt("Rock, Paper or Scissors?");
             lower = playerChoice.toLowerCase();
@@ -46,13 +45,13 @@
             return playerChoice;
         }    
 
-         // this function will play one round of rock, paper, scissors. it calls upon the already created playerPrompt and computerPlay functions to create the round's selected choices.  it also calls upon the computerStringSelection function to turn the computer's integer choice into a readable string choice for the console output.
+         // playRound will play one round of rock, paper, scissors. it calls upon the already created playerPrompt and computerPlay functions to create the round's selected choices.  it also calls upon the computerStringSelection function to turn the computer's integer choice into a readable string choice for the console output.
          function playRound() {
             
             playerSelection = playerPrompt();
             computerIntSelection = computerPlay();
             computerStringSelection = computerIntToString();
-            
+
             console.log("You chose " + lower + ".");
             console.log("The computer chose " + computerStringSelection + ".");
             
