@@ -46,7 +46,7 @@
         }    
 
          // playRound will play one round of rock, paper, scissors. it calls upon the already created playerPrompt and computerPlay functions to create the round's selected choices.  it also calls upon the computerStringSelection function to turn the computer's integer choice into a readable string choice for the console output.
-         function playRound() {
+        function playRound() {
             
             playerSelection = playerPrompt();
             computerIntSelection = computerPlay();
@@ -54,44 +54,60 @@
 
             console.log("You chose " + lower + ".");
             console.log("The computer chose " + computerStringSelection + ".");
-            
+           
             if (playerSelection === 0 && computerIntSelection === 2) {
                 console.log("You win! Rock smashes scissors into nothingness.");
-                let result = 1;
-                return;
+                result = 1;
             } else if (playerSelection === 0 && computerIntSelection === 0) {
                 console.log("It's a tie!"); 
-                let result = 0;
-                return;
+                result = 0;
             } else if (playerSelection === 0 && computerIntSelection === 1) {
-                console.log("Sorry, you lose! Paper engulfs rock until nothing reamins.");
-                let result = -1;
-                return;
+                console.log("Sorry, you lose! Paper engulfs rock until nothing remains.");
+                result = -1;
             } else if (playerSelection === 1 && computerIntSelection === 0) {
-                console.log("You win! Paper engulfs rock until nothing reamins.");
-                let result = 1;
-                return;
+                console.log("You win! Paper engulfs rock until nothing remains.");
+                result = 1;
             } else if (playerSelection === 1 && computerIntSelection === 1) {
                 console.log("It's a tie!"); 
-                let result = 0;
-                return;
+                result = 0;
             } else if (playerSelection === 1 && computerIntSelection === 2) {
                 console.log("Sorry, you lose! Scissors deftly slices through paper until only ribbons remain.");
-                let result = -1;
-                return;
+                result = -1;
             } else if (playerSelection === 2 && computerIntSelection === 1) {
                 console.log("You win! Scissors deftly slices through paper until only ribbons remain.");
-                let result = 1;
-                return;
+                result = 1;
             } else if (playerSelection === 2 && computerIntSelection === 2) {
                 console.log("It's a tie!");
-                let result = 0;
-                return;
-            } else {let result = -1;
+                result = 0;
+            } else if (playerSelection === 2 && computerIntSelection === 0){
                 console.log("Sorry, you lose! Rock smashes scissors into nothingness.");
-                return; 
-            }      
+                result = -1;
+            }  
+            return;
         }    
+        // playerScore should keep track of the player's score but currently it doesn't save the value from the previous round and update it.  i need to fix this.
+        function playerScore() {
+
+            startingScore = 0;
+            playerscore = startingScore;
+            if (result === 1) {
+                playerscore = playerscore + 1;
+                } else if (result === 0) {
+                playerscore = playerscore + 0;
+                } else if (result === -1) {
+                playerscore = playerscore - 1;
+                } return playerscore;
+               
+        }    
+        // game will play 5 rounds of rock paper scissors
+        function game() {
+
+            playRound();
+            playRound();
+            playRound();
+            playRound();
+            playRound();
+        }
     </script>
 </body>
 </html>
